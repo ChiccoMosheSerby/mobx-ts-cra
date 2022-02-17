@@ -53,7 +53,7 @@ interface styledProps {
 export const Div = styled.div<styledProps>`
   position: relative;
   text-align: left;
-  width: calc(100% - 70px);
+  width: calc(100% - 150px);
   box-sizing: border-box;
   word-wrap: break-word;
   padding-right: 3px;
