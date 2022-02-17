@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
 export const Main = styled.div`
+  margin: auto;
+  max-width: 90vw;
   display: flex;
   flex-direction: column;
   list-style: none;

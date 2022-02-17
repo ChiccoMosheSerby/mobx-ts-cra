@@ -4,9 +4,7 @@ import { TodoStore } from "./TodoStore/TodoStore";
 
 function App() {
   return (
-    <div className="App">
       <TodoList todoStore={TodoStore} />
-    </div>
   );
 }
 
