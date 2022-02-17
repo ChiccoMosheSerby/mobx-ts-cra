@@ -27,7 +27,7 @@ export const Ul = styled.ul`
     list-style: none;
     box-sizing: border-box;
     padding: 5px;
-    border-bottom: solid 1px lightgray;
+    /* border-bottom: solid 1px lightgray; */
     align-items: center;
 
     .xBtn {

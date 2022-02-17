@@ -36,7 +36,7 @@ const TodoList: React.FC<TodoListProps> = observer(({ todoStore }) => {
       {todoStore.todos.length > 0 && (
         <Ul>
           {todoStore.todos.map((t, idx) => {
-            return (
+            return (<>
               <li key={t.id}>
                 <span
                   className="xBtn"
@@ -52,11 +52,12 @@ const TodoList: React.FC<TodoListProps> = observer(({ todoStore }) => {
                   {t.completed ? "re-Open" : "Done"}
                 </Span>
               </li>
+              <hr style={{width:'100%'}}/>
+              </>
             );
           })}
         </Ul>
       )}
-      <hr style={{width:'100%'}}/>
       <div>Completed : {todoStore.status.completed}</div>
       <div>Remaining : {todoStore.status.remaining}</div>
     </Main>
