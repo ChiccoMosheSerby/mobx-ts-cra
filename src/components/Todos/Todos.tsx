@@ -1,13 +1,14 @@
 import { observer } from "mobx-react";
 import React, { useState } from "react";
 import { TodoStoreImpl } from "../../TodoStore/TodoStore";
-import { Main, Ul, Div, Span } from "./TodoList.style";
+import List from "./List";
+import { Main } from "./TodoList.style";
 
 interface TodoListProps {
   todoStore: TodoStoreImpl;
 }
 
-const TodoList: React.FC<TodoListProps> = observer(({ todoStore }) => {
+const Todos: React.FC<TodoListProps> = observer(({ todoStore }) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,35 +34,11 @@ const TodoList: React.FC<TodoListProps> = observer(({ todoStore }) => {
         onKeyDown={onKeyDown}
       />
       <button onClick={onSubmit}>Add</button>
-      {todoStore.todos.length > 0 && (
-        <Ul>
-          {todoStore.todos.map((t, idx) => {
-            return (<>
-              <li key={t.id}>
-                <span
-                  className="xBtn"
-                  onClick={() => todoStore.removeTodo(t.id)}
-                >
-                  X
-                </span>
-                <Div done={t.completed}>{t.title}</Div>
-                <Span
-                  done={t.completed}
-                  onClick={() => todoStore.toggleCompleted(t)}
-                >
-                  {t.completed ? "re-Open" : "Done"}
-                </Span>
-              </li>
-              <hr style={{width:'100%'}}/>
-              </>
-            );
-          })}
-        </Ul>
-      )}
+      <List />
       <div>Completed : {todoStore.status.completed}</div>
       <div>Remaining : {todoStore.status.remaining}</div>
     </Main>
   );
 });
 
-export default TodoList;
+export default Todos;

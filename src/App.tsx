@@ -1,10 +1,10 @@
 import "./App.css";
-import TodoList from "./components/TodoList/TodoList";
+import Todos from "./components/Todos/Todos";
 import { TodoStore } from "./TodoStore/TodoStore";
 
 function App() {
   return (
-      <TodoList todoStore={TodoStore} />
+      <Todos todoStore={TodoStore} />
   );
 }
 
